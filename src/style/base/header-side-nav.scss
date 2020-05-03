@@ -1,0 +1,15 @@
+/* Addon mixin - style element when status is active */
+@mixin style-burger-active {
+	.js_burger-active & {
+		@content;
+	}
+}
+
+.burger-overlay {
+}
+
+.burger-button {
+}
+
+.burger-content {
+}

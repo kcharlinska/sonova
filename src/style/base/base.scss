@@ -1,0 +1,72 @@
+html,
+body {
+	width: 100%;
+}
+
+body {
+	position: relative;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.footer {
+	margin-top: auto;
+}
+
+* {
+	// Mobile tap color highlight
+	@if ($tap-color != false) {
+		-webkit-tap-highlight-color: $tap-color;
+	}
+
+	// Text selection color
+	@if ($text-selection-color != false) {
+		&::selection {
+			background: $text-selection-color;
+		}
+	}
+}
+
+@include grid($grid-count: 12);
+
+.click-expand {
+	@include click-expand(10px);
+}
+
+.wrap {
+	@extend %wrap-style;
+
+	@include wrap(1024, 15px);
+}
+
+.row {
+	@extend %grid-style;
+}
+
+.space {
+	@include space(20px, 10px);
+
+	&-x {
+		@include space-x(20px);
+	}
+}
+
+.group {
+	@extend %group-style;
+}
+
+.square {
+	@extend %square-style;
+}
+
+.wrap {
+	@extend %wrap-style;
+}
+
+video {
+	width: 100%;
+}
+
+// .sr-only {
+// 	@extend %sr-only-style;
+// }

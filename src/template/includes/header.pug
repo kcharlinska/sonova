@@ -1,0 +1,25 @@
+header#header.header
+	#header-content.header__content
+		a.sr-only.sr-only-focusable(href="#page") Skip section
+		.wrap.wrap--navbar
+			.row.row-header-space.flex-space-between
+
+				.col-shrink.col-y-center
+					a.logo(href="/")
+						span.logo__text.hide.md_block
+							| FrontBox-Static Starter Site
+
+				.col-shrink.col-y-center
+
+					#burger-button.burger-button
+						.plank
+						.plank
+						.plank
+
+					#burger-menu.burger-content
+						#burger-menu-container.burger-content__container.flex-y-center
+							include navigation 
+
+					#burger-overlay.burger-overlay.overlay
+
+

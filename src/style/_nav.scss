@@ -1,0 +1,18 @@
+.nav-header-menu {
+	& > &__item {
+		display: block;
+		margin-bottom: 20px;
+		padding: 10px 6px;
+		transition: color $time-transition;
+		color: color('black');
+		text-align: center;
+
+		&:last-child {
+			margin-bottom: 0 !important;
+		}
+
+		@include hover {
+			color: color('primary');
+		}
+	}
+}

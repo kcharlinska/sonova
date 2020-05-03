@@ -1,0 +1,64 @@
+block variables
+<!DOCTYPE html>
+	html.js-disabled(lang='en' itemscope itemtype="http://schema.org/WebPage" dir="ltr" prefix="og: http://ogp.me/ns#")
+		head
+
+			//- Base Meta
+			meta(charset="utf-8")
+			meta(name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1")
+			meta(http-equiv="X-UA-Compatible" content="IE=Edge")
+			meta(name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no")
+			
+			//- Title
+			if title
+				title #{title}
+				meta(itemprop="name" content= title)
+				meta(name="twitter:title" content= title)
+				meta(property="og:title" content= title)
+
+			//- Description
+			if description
+				meta(name="description" content= description)
+				meta(property="og:description" content= description)
+				meta(itemprop="description" content= description)
+				meta(name="twitter:description" content= description)
+
+			//- OG Image
+			if ogImage
+				meta(property="og:image" content="images/og/" + ogImage)
+				meta(name="twitter:card" content="summary_large_image")
+				meta(name="twitter:image:src" content="images/og/" + ogImage)
+				meta(itemprop="image" content="images/og/" + ogImage)
+
+			//- Keywords
+			if keywords
+				meta(name="keywords" content= keywords)
+
+			//- Addon Meta
+			meta(property="og:type" content='website')
+
+			//- Assets
+			block assets_header
+				if dev
+				link(rel="stylesheet" type="text/css" href="style.css" media="all")
+				if dev
+					link(rel="stylesheet" type="text/css" href="css/utilities.css" media="all")
+
+			//- Favicon
+			:includeOptional(file="src/favicons/index.html")
+
+			script
+				| document.documentElement.classList.remove('js-disabled');
+				| document.documentElement.classList.add('is-loading');
+
+		body#body
+
+			include info-disabled-javascript.pug
+			include info-old-browser.pug
+
+			//- Main content
+			block content
+
+			//- Assets
+			block assets_footer
+				script(src="scripts/app.js")

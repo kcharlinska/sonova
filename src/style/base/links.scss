@@ -1,0 +1,55 @@
+/*
+Links
+
+Style guide: Component.Links
+*/
+
+.link {
+	// transition: color $time-transition;
+	// cursor: pointer;
+
+	// &__group {
+	// 	@include space-x(10px);
+	// 	display: flex;
+	// 	flex-direction: row;
+	// 	flex-wrap: nowrap;
+	// 	align-items: center;
+
+	// 	> {
+	// 		svg,
+	// 		span,
+	// 		img {
+	// 			box-sizing: content-box;
+	// 		}
+	// 	}
+	// }
+
+	// /* Modifications */
+	// &--primary {
+	// 	color: color("primary");
+
+	// 	.icon {
+	// 		fill: color("primary");
+	// 	}
+
+	// 	@include hover {
+	// 		color: darken(color("primary"), 10%);
+
+	// 		.icon {
+	// 			fill: darken(color("primary"), 10%);
+	// 		}
+	// 	}
+	// }
+
+	// // &--secondary {
+	// // }
+
+	// @include disable {
+	// 	color: color("disable") !important;
+	// 	cursor: not-allowed;
+
+	// 	.icon {
+	// 		fill: color("disable") !important;
+	// 	}
+	// }
+}

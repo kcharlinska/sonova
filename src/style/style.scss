@@ -1,0 +1,17 @@
+@import 'node_modules/@bpiwek/frontbox-style/index';
+
+@include browser-reset-style;
+
+/*!
+ * FrontBox Static 0.0.2
+ * Bartosz Piwek
+ * https://github.com/BartoszPiwek/FrontBox-Static
+ */
+
+@import './variables/*';
+@import './base/*';
+@import './plugins/*';
+@import './tools/*';
+@import './modules/*';
+@import './plugins/*';
+@import '_*';

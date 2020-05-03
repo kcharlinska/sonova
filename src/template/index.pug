@@ -1,0 +1,27 @@
+//- Include bootstrap template
+	blocks:
+		- variables
+		- content
+		- assets_header
+		- assets_footer
+extends includes/bootstrap.pug
+block variables
+	- var title = 'Hello World with FrontBox Starter!'
+	- var description = 'Default index page'
+	- var keywords = false
+	- var ogImage = false
+
+//- Main content
+block append content
+
+	include includes/header.pug
+
+	main#page.page
+		.wrap
+			| Change me!
+
+	include includes/footer.pug
+
+//- Append addon assets {js/css}
+block append assets_header
+block append assets_footer

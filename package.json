@@ -1,0 +1,102 @@
+{
+	"name": "@bpiwek/frontbox-static",
+	"version": "0.0.2",
+	"author": "Bartosz Piwek",
+	"description": "Bunch of functions, snippets, templates, tasks and so on for Front-End Developer",
+	"homepage": "https://github.com/BartoszPiwek/FrontBox-Static",
+	"engines": {
+		"node": ">= 0.8.0"
+	},
+	"scripts": {
+		"start": "gulp website --generate --watch --server",
+		"build": "gulp website --clean --generate --prod --favicon --optimized",
+		"favicon": "gulp generateFavicons",
+		"optimize": "gulp optimizeAssets",
+		"test": "gulp test",
+		"update": "ncu -u",
+		"server": "gulp createServer --server"
+	},
+	"jshintConfig": {
+		"undef": true,
+		"unused": true,
+		"esversion": 6
+	},
+	"babel": {
+		"presets": [
+			"@babel/preset-env"
+		]
+	},
+	"browserslist": [
+		"> 0.5%",
+		"last 2 versions",
+		"Firefox ESR",
+		"not dead",
+		"IE 9-11"
+	],
+	"bugs": {
+		"url": "https://github.com/BartoszPiwek/FrontBox-Static/issues"
+	},
+	"private": true,
+	"devDependencies": {
+		"@babel/core": "^7.9.0",
+		"@babel/plugin-transform-object-assign": "^7.8.3",
+		"@babel/plugin-transform-typescript": "^7.9.4",
+		"@babel/preset-env": "^7.9.5",
+		"@babel/register": "^7.9.0",
+		"@types/autoprefixer": "^9.7.2",
+		"@types/gulp-if": "0.0.33",
+		"@types/jquery": "^3.3.36",
+		"@types/node": "^13.13.4",
+		"autoprefixer": "^9.7.6",
+		"babel-plugin-loop-optimizer": "^1.4.1",
+		"babel-plugin-transform-remove-console": "^6.9.4",
+		"babel-preset-minify": "^0.5.1",
+		"browser-sync": "^2.26.7",
+		"browserify": "^16.5.1",
+		"cosmiconfig": "^6.0.0",
+		"cssnano": "^4.1.10",
+		"del": "^5.1.0",
+		"gulp": "^4.0.2",
+		"gulp-babel": "^8.0.0",
+		"gulp-changed": "^4.0.2",
+		"gulp-combine-media-queries": "^0.2.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-favicons": "^2.4.0",
+		"gulp-if": "^3.0.0",
+		"gulp-image": "^6.1.0",
+		"gulp-imagemin": "^7.1.0",
+		"gulp-newer": "^1.4.0",
+		"gulp-postcss": "^8.0.0",
+		"gulp-pug": "^4.0.1",
+		"gulp-real-favicon": "^0.3.2",
+		"gulp-sass": "^4.1.0",
+		"gulp-sass-glob": "^1.1.0",
+		"gulp-sourcemaps": "^2.6.5",
+		"gulp-static-hash": "^0.1.4",
+		"gulp-strip-code": "^0.1.4",
+		"gulp-svgmin": "^2.2.0",
+		"gulp-typescript": "^5.0.1",
+		"gulpclass": "^0.2.0",
+		"node-sass": "^4.14.0",
+		"picturefill": "^3.0.3",
+		"postcss": "^7.0.27",
+		"stylelint": "^13.3.3",
+		"stylelint-config-property-sort-order-smacss": "^6.0.0",
+		"stylelint-order": "^4.0.0",
+		"stylelint-scss": "^3.17.1",
+		"svgmin": "^0.1.0",
+		"ts-node": "^8.9.1",
+		"tsify": "^4.0.1",
+		"typescript": "^3.8.3",
+		"uncss": "^0.17.3",
+		"vinyl-buffer": "^1.0.1",
+		"vinyl-source-stream": "^2.0.0"
+	},
+	"dependencies": {
+		"@bpiwek/frontbox-style": "^0.0.5",
+		"js-cookie": "^2.2.1",
+		"vh-check": "^2.0.5"
+	},
+	"repository": "https://github.com/BartoszPiwek/FrontBox-Static.git",
+	"license": "MIT"
+}

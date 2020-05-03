@@ -1,0 +1,78 @@
+.list {
+	&__item {
+		color: color('default');
+	}
+
+	&--same-size {
+		.list {
+			&__item {
+				flex: 1 0 auto !important;
+			}
+		}
+	}
+
+	&--dot {
+		> .list {
+			&__item {
+				position: relative;
+				padding-left: 20px;
+
+				&:before {
+					content: '';
+					display: block;
+					position: absolute;
+					top: 4px;
+					left: 0;
+					width: 8px;
+					height: 8px;
+					border-radius: 50%;
+					background-color: color('primary');
+				}
+			}
+		}
+
+		&.list--horizontal {
+			> .list {
+				&__item {
+					&:before {
+						left: 8px;
+					}
+				}
+			}
+		}
+	}
+}
+
+/*
+Vertical
+
+Markup:
+<div class="hideable">
+	<ul class="list list--horizontal space-x list--dot">
+		<li class="list__item">List item</li>
+		<li class="list__item">List item</li>
+		<li class="list__item">List item</li>
+	</ul>
+</div>
+
+Style guide: List.vertical
+*/
+
+.list--vertical {
+	@include space-y(14px);
+}
+
+.list--horizontal {
+	@include space-x(26px);
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	.list {
+		&__item {
+			display: inline-block;
+			flex: 0 1 auto;
+		}
+	}
+}

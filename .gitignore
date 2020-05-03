@@ -1,0 +1,24 @@
+# Node
+node_modules/
+*.lock
+
+.tscache
+docs
+
+# Libs
+src/js/libs/*
+
+# Generated
+#public
+documentation
+log
+
+# Maps
+*.map.*
+*.map
+
+# Generated
+src/images/favicons/*
+
+# Manifest
+yarn-error.log

@@ -1,0 +1,33 @@
+$breakpoints: (
+	mobile: (
+		name: sm,
+		size: 576,
+	),
+	fablet: (
+		name: md,
+		size: 768,
+	),
+	tablet: (
+		name: lg,
+		size: 992,
+	),
+	desktop: (
+		name: xl,
+		size: 1200,
+	),
+	desktop-hd: (
+		name: hd,
+		size: 1366,
+	),
+	desktop-wide: (
+		name: whd,
+		size: 1440,
+	),
+);
+
+$media: (
+	burger-show: 'screen and (max-width: 767px)',
+	burger-hide: 'screen and (min-width: 768px)',
+	retina: '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)',
+	ie-only: 'screen and (-ms-high-contrast: active), (-ms-high-contrast: none)',
+);

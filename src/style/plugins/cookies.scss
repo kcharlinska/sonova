@@ -1,0 +1,89 @@
+.js_cookies-information {
+	@extend %scrollbar-placeholder;
+
+	position: fixed;
+	z-index: index('menu') - 1;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 8px 0;
+	transition: transform $time-transition, opacity $time-transition;
+	border-top: 2px solid color('primary');
+	opacity: 1;
+	background-color: transparentize(color('primary'), 0.1);
+	box-shadow: 0 -5px 10px 0 transparentize(color('black'), 0.4);
+
+	&__img {
+		display: none;
+
+		@include media(fablet) {
+			display: block;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 65px;
+			height: 67px;
+		}
+	}
+
+	&__text {
+		color: color('white');
+		font-size: 14px;
+		text-align: justify;
+	}
+
+	&__container {
+		position: relative;
+		padding-right: 40px;
+
+		@include media(fablet) {
+			padding-left: 80px;
+		}
+	}
+
+	&-exit {
+		@include click-expand(10px);
+
+		position: absolute;
+		top: 0;
+		right: 0;
+		cursor: pointer;
+
+		&__icon {
+			width: 20px;
+			height: 20px;
+			transition: transform $time-transition;
+
+			&:before,
+			&:after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 100%;
+				height: 2px;
+				transform-origin: left top;
+				background-color: color('white');
+			}
+
+			&:before {
+				transform: rotate(45deg) translate(-50%, -50%);
+			}
+
+			&:after {
+				transform: rotate(-45deg) translate(-50%, -50%);
+			}
+		}
+
+		@include hover {
+			.js_cookies-information-exit__icon {
+				transform: rotate(90deg);
+			}
+		}
+	}
+
+	&--hide {
+		transform: translate(0, 100%);
+		opacity: 0;
+	}
+}

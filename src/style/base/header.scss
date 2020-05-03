@@ -1,0 +1,50 @@
+/*
+Tools
+
+Contains: row
+
+Style guide: Header.tools
+*/
+
+.row {
+	&-header-space {
+		@include space(25px, 20px);
+	}
+}
+
+.header {
+	position: relative;
+	height: 90px;
+
+	&__content {
+		position: absolute;
+		z-index: index('header');
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding: 20px 0;
+		transition: height $time-transition, box-shadow $time-transition,
+			background-color $time-transition, padding $time-transition;
+		background-color: color('primary');
+		box-shadow: 0 5px 10px 0 transparentize(color('black'), 1);
+	}
+
+	&.js_sticky {
+		.header {
+			&__content {
+				@extend %fix-fixed;
+
+				padding: 10px 0;
+				box-shadow: 0 5px 10px 0 transparentize(color('black'), 0.4);
+			}
+		}
+	}
+
+	@include media(fablet) {
+		height: 90px;
+	}
+
+	@include media(tablet) {
+		height: 90px;
+	}
+}

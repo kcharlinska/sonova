@@ -1,0 +1,353 @@
+/*
+SECTION Input
+
+Example:
+<div class="input" tabindex="0">
+	<input id="input-default" name="input-default" required="required" tabindex="-1">
+	<label class="input__label" for="input-default">
+		<span class="input__input"></span>
+		<span class="input__text">
+			Label
+		</span>
+	</label>
+</div>
+
+Style guide: Forms.input-default
+*/
+
+.input {
+	position: relative;
+
+	// Hide oryginal radio element
+	input {
+		position: absolute !important;
+		bottom: 0 !important;
+		left: 50% !important;
+		width: 1px !important;
+		height: 1px !important;
+		padding: 0 !important;
+		overflow: hidden !important;
+		clip: rect(0 0 0 0) !important;
+		border: 0 !important;
+		white-space: nowrap !important;
+		/* stylelint-disable-next-line */
+		-webkit-clip-path: inset(50%) !important;
+		clip-path: inset(50%) !important;
+
+		// Block user select when input is disabled
+		&:disabled {
+			+ .input-radio {
+				&__label {
+					opacity: 0.4;
+					pointer-events: none;
+					user-select: none;
+				}
+			}
+		}
+
+		&:checked + .input {
+			&__label .input__input {
+				/* Style for using SVG for checkbox element mark */
+				&--mark-icon .input__mark {
+					opacity: 1;
+				}
+				/* Style for using color fill for checkbox element mark */
+				&--mark-color {
+					&:before {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+
+	&__input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 20px;
+		height: 20px;
+		transition: border-color $time-transition;
+		border: 1px solid color("primary");
+
+		&--mark-color {
+			&:before {
+				content: "";
+				position: absolute;
+				top: 5%;
+				left: 5%;
+				width: 90%;
+				height: 90%; // Style
+				transition: opacity $time-transition, background-color $time-transition; // Size
+				opacity: 0;
+				background-color: color("primary");
+			}
+		}
+	}
+
+	&__mark {
+		position: absolute;
+		top: 10%;
+		left: 10%;
+		width: 80%;
+		height: 80%; // Style
+		transition: opacity $time-transition, fill $time-transition; // Size
+		opacity: 0;
+		fill: color("primary");
+	}
+
+	// Clickable label toggle checkbox
+	&__label {
+		display: block; // Space for checkbox
+		padding-left: 30px;
+		cursor: pointer;
+
+		@include hover {
+			.input-checkbox {
+				// Fake checkbox element
+				&__input {
+					border-color: color("black");
+				}
+			}
+		}
+	}
+}
+
+/*
+SECTION Checkbox
+
+Example: 
+<div class="input input-checkbox" tabindex="0">
+	<input type="checkbox" id="checkbox1" name="checkbox1" required="required" tabindex="-1">
+		<label class="input__label" for="checkbox1">
+		<span class="input__input"></span>
+		<span class="input__text">
+			Label
+		</span>
+	</label>
+</div>
+
+<div class="input input-checkbox" tabindex="0">
+	<input type="checkbox" id="checkbox2" name="checkbox2" required="required" tabindex="-1">
+	<label class="input__label" for="checkbox2">
+		<span class="input__input input__input--mark-icon">
+			<svg class="input__mark" viewBox="0 0 512 512"><path d="M256 0C114.615 0 0 114.615 0 256s114.615 256 256 256 256-114.615 256-256S397.385 0 256 0zm-48 416L102 278l47-49 59 75 185-151 23 23-208 240z"></path></svg>
+		</span>
+		<span class="input__text">
+			Label
+		<span>
+	</label>
+</div>
+
+<div class="input input-checkbox" tabindex="0">
+	<input type="checkbox" id="checkbox3" name="checkbox3" required="required" tabindex="-1">
+	<label class="input__label" for="checkbox3">
+		<span class="input__input input__input--mark-color"></span>
+		<span class="input__text">
+			Label
+		<span>
+	</label>
+</div>
+
+Style guide: Forms.input-checkbox
+*/
+
+.input-checkbox {
+}
+
+/*
+SECTION Radio
+
+Example: 
+<div class="input input-radio" tabindex="0">
+	<input type="radio" id="radio-default" name="input-radio" required="required" tabindex="-1">
+	<label class="input__label" for="radio-default">
+		<span class="input__input"></span>
+		<span class="input__text">Label<span>
+	</label>
+</div>
+
+<div class="input input-radio" tabindex="0">
+	<input type="radio" id="radio-mark-color" name="input-radio" required="required" tabindex="-1">
+	<label class="input__label" for="radio-mark-color">
+		<span class="input__input input__input--mark-color"></span>
+		<span class="input__text">
+			Label
+		<span>
+	</label>
+</div>
+
+<div class="input input-radio" tabindex="0">
+	<input type="radio" id="radio-mark-icon" name="input-radio" required="required" tabindex="-1">
+	<label class="input__label" for="radio-mark-icon">
+		<span class="input__input input__input--mark-icon">
+			<svg class="input__mark" viewBox="0 0 512 512"><path d="M256 0C114.615 0 0 114.615 0 256s114.615 256 256 256 256-114.615 256-256S397.385 0 256 0zm-48 416L102 278l47-49 59 75 185-151 23 23-208 240z"></path></svg>
+		</span>
+		<span class="input__text">
+			Label
+		<span>
+	</label>
+</div>
+
+
+
+Style guide: Forms.input-radio
+*/
+.input-radio {
+	.input {
+		// Fake radio input
+		&__input {
+			border-radius: 50%;
+
+			&--mark-color {
+				&:before {
+					border-radius: 50%;
+				}
+			}
+		}
+	}
+}
+
+/*
+SECTION Text
+
+Example:
+<input type="text" class="input-text" required="required">
+
+Style guide: Forms.input-text
+*/
+.input-text {
+	width: 100%;
+	height: 38px;
+	padding: 4px 12px;
+	transition: border-color $time-transition, color $time-transition; // Size
+	border: 1px solid color("primary");
+	border-radius: 8px;
+	color: color("primary");
+	font-size: 18px; // Style
+
+	&:hover {
+		border-color: transparentize(color("black"), 0.4);
+		color: transparentize(color("black"), 0.4);
+	}
+
+	&:active,
+	&:focus {
+		border-color: color("black");
+		color: color("black");
+	}
+
+	&--block {
+		display: block;
+		width: 100%;
+	}
+}
+
+/**
+  * Input group
+**/
+
+.input-group {
+	// Space between groups
+	& > &__item {
+		position: relative;
+		margin-bottom: 10px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	// Full blocks children
+	&--block {
+		.input-group {
+			&__item {
+				& > * {
+					display: block;
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+.form {
+	position: relative;
+	padding: 10px;
+
+	// JS
+	&__response-content {
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		transition: opacity $time-transition, opacity $time-transition $time-transition;
+		opacity: 0;
+	}
+
+	&__response {
+		position: absolute;
+		z-index: -1;
+		top: 50%;
+		left: 50%;
+		width: auto;
+		transform: translate(-50%, -50%);
+		transition: opacity $time-transition, opacity $time-transition $time-transition;
+		opacity: 0;
+
+		&--wait {
+		}
+
+		&--msg {
+			width: 100%;
+			font-size: 16px;
+			font-weight: 700;
+			text-align: center;
+		}
+	}
+}
+
+/**
+ * JavaScript form class 
+*/
+
+.js_form {
+	&--run {
+		.form {
+			&__content {
+				opacity: 0.3;
+				pointer-events: none;
+				user-select: none;
+				filter: blur(2px);
+			}
+
+			&__response-content {
+				z-index: 1;
+				opacity: 1;
+			}
+		}
+	}
+
+	&--wait {
+		.form {
+			&__response {
+				&--wait {
+					z-index: 1;
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	&--msg {
+		.form {
+			&__response {
+				&--msg {
+					z-index: 1;
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
