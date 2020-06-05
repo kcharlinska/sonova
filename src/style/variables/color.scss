@@ -1,21 +1,21 @@
-$colors: (
-	'default': #fff,
+$colors: ('default': #141433,
 	'black': #000,
 	'white': #fff,
 	'dark': #343a40,
 	'grey': #90938f,
 	'disable': #90938f,
-	'primary': #05386b,
+	'primary': #007fbe,
 	'secondary': #379683,
 	'success': #28a745,
 	'error': #dc3545,
 	'warning': #ffc107,
 	'info': #17a2b8,
 	'light': #f8f9fa,
+	'body': #f8f6f7,
+	'light-grey': #dbdbdb,
 );
 
-$colors-special: (
-	'facebook': #3b5998,
+$colors-special: ('facebook': #3b5998,
 	'twitter': #1da1f2,
 	'youtube': #f00,
 	'googleplus': #dd4b39,

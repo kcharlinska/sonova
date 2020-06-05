@@ -1,25 +1,26 @@
 header#header.header
 	#header-content.header__content
-		a.sr-only.sr-only-focusable(href="#page") Skip section
-		.wrap.wrap--navbar
+		.wrap
 			.row.row-header-space.flex-space-between
 
 				.col-shrink.col-y-center
-					a.logo(href="/")
-						span.logo__text.hide.md_block
-							| FrontBox-Static Starter Site
+					a.logo(href="/" title="Sonova")
+						img(src="../../images/svg/Sonova_Logo.svg" alt="Sonova logo")
 
 				.col-shrink.col-y-center
+					a.user
+						:svg(file="user2")
+						span Maciej Dziura
 
-					#burger-button.burger-button
-						.plank
-						.plank
-						.plank
+					//- #burger-button.burger-button
+					//- 	.plank
+					//- 	.plank
+					//- 	.plank
 
-					#burger-menu.burger-content
-						#burger-menu-container.burger-content__container.flex-y-center
-							include navigation 
+					//- #burger-menu.burger-content
+					//- 	#burger-menu-container.burger-content__container.flex-y-center
+					//- 		include navigation
 
-					#burger-overlay.burger-overlay.overlay
+					//- #burger-overlay.burger-overlay.overlay
 
-
+	include navigation.pug

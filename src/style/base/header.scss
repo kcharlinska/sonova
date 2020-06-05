@@ -6,45 +6,105 @@ Contains: row
 Style guide: Header.tools
 */
 
-.row {
-	&-header-space {
-		@include space(25px, 20px);
-	}
-}
+// .row {
+// 	&-header-space {
+// 		@include space(25px, 20px);
+// 	}
+// }
+
+// .header {
+// 	position: relative;
+// 	height: 90px;
+
+// 	&__content {
+// 		position: absolute;
+// 		z-index: index('header');
+// 		top: 0;
+// 		left: 0;
+// 		width: 100%;
+// 		padding: 20px 0;
+// 		transition: height $time-transition, box-shadow $time-transition,
+// 			background-color $time-transition, padding $time-transition;
+// 		background-color: color('primary');
+// 		box-shadow: 0 5px 10px 0 transparentize(color('black'), 1);
+// 	}
+
+// 	&.js_sticky {
+// 		.header {
+// 			&__content {
+// 				@extend %fix-fixed;
+
+// 				padding: 10px 0;
+// 				box-shadow: 0 5px 10px 0 transparentize(color('black'), 0.4);
+// 			}
+// 		}
+// 	}
+
+// 	@include media(fablet) {
+// 		height: 90px;
+// 	}
+
+// 	@include media(tablet) {
+// 		height: 90px;
+// 	}
+// }
 
 .header {
-	position: relative;
-	height: 90px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	box-shadow: 0 5px 10px 0 transparentize(color('black'), 0.9);
 
 	&__content {
-		position: absolute;
-		z-index: index('header');
-		top: 0;
-		left: 0;
-		width: 100%;
 		padding: 20px 0;
-		transition: height $time-transition, box-shadow $time-transition,
-			background-color $time-transition, padding $time-transition;
-		background-color: color('primary');
-		box-shadow: 0 5px 10px 0 transparentize(color('black'), 1);
+		border-bottom: 1px solid color('light-grey');
 	}
 
-	&.js_sticky {
-		.header {
-			&__content {
-				@extend %fix-fixed;
-
-				padding: 10px 0;
-				box-shadow: 0 5px 10px 0 transparentize(color('black'), 0.4);
-			}
+	.logo {
+		img {
+			width: 100px;
 		}
 	}
 
-	@include media(fablet) {
-		height: 90px;
+	.user {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: $time-transition;
+
+		&:hover {
+			color: color('primary');
+
+			.icon {
+				fill: color('primary');
+			}
+		}
+
+		.icon {
+			margin-right: 10px;
+			fill: color('default');
+		}
+	}
+}
+
+.nav__container {
+
+	.wrap--navbar {
+		max-width: 1094px;
+		padding-left: 15px;
+		padding-right: 15px;
 	}
 
-	@include media(tablet) {
-		height: 90px;
+	.list-navigation {
+		&__item {
+			display: inline-block;
+			padding: 20px;
+			transition: $time-transition;
+
+			&:hover {
+				color: color('primary');
+			}
+		}
 	}
 }

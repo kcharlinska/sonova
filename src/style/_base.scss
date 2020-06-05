@@ -18,7 +18,7 @@ html {
 body {
 	@extend %scrollbar-placeholder;
 
-	background-color: color('secondary');
+	background-color: color('body');
 	color: color('default');
 	font-family: $font-family;
 	font-size: 16px;
