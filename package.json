@@ -79,7 +79,7 @@
 		"gulpclass": "^0.2.0",
 		"node-sass": "^4.14.0",
 		"picturefill": "^3.0.3",
-		"postcss": "^7.0.27",
+		"postcss": "^8.2.10",
 		"stylelint": "^13.3.3",
 		"stylelint-config-property-sort-order-smacss": "^6.0.0",
 		"stylelint-order": "^4.0.0",
